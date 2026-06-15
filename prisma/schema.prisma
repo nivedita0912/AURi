@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client"
   output   = "../lib/generated/prisma"
@@ -7,3 +6,45 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id         String      @id @default(cuid())
+  name       String
+  clerkId    String      @unique
+  email      String      @unique
+  imageUrl   String      @default("")
+  credits    Int         @default(10)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  plan       String      @default("free")
+  workspaces WorkSpace[]
+}
+
+model WorkSpace {
+  id        String   @id
+  title     String?
+  userId    String
+  users     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  Json     @default("[]")
+  fileData  Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// PS C:\Users\Asus\OneDrive\Desktop\Auri\auri> npx prisma migrate dev --name create-model
+// Loaded Prisma config from prisma.config.ts.
+
+// Prisma schema loaded from prisma\schema.prisma.
+// Datasource "db": PostgreSQL database "postgres", schema "public" at "aws-1-ap-southeast-2.pooler.supabase.com:5432"
+
+// Applying migration `20260614083732_create_model`
+
+// The following migration(s) have been created and applied from new schema changes:
+
+// prisma\migrations/
+//   └─ 20260614083732_create_model/
+//     └─ migration.sql
+
+// Your database is now in sync with your schema.
