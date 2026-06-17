@@ -2,20 +2,22 @@ import { WorkspaceClient } from "@/components/ProjectSpace/WorkspaceClient";
 import { getWorkspaceUser, getWorkspaceById } from "@/actions/workspace";
 
 interface WorkspacePageProps {
-  searchParams: Promise<{ prompt?: string; id?: string }>;
+  searchParams: Promise<{ prompt?: string; 
+    // id?: string
+   }>;
 }
 
 export default async function WorkspacePage({
   searchParams,
 }: WorkspacePageProps) {
-  const { prompt, id } = await searchParams;
+  const { prompt } = await searchParams;
 
   const user = await getWorkspaceUser();
 
-  let workspace = null;
-  if (id) {
-    workspace = await getWorkspaceById(id, user.id);
-  }
+   let workspace = null;
+  // if (id) {
+  //   workspace = await getWorkspaceById(id, user.id);
+  // }
 
   return (
     <WorkspaceClient

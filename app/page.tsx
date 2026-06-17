@@ -20,7 +20,6 @@ import { FireworksBackground } from "@/components/animate-ui/components/backgrou
 
 import { useTheme } from 'next-themes';
 import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
-// import { FireworksBackground } from '@/components/animate-ui/components/backgrounds/fireworks';
 
 type FireworksBackgroundDemoProps = {
   population: number;

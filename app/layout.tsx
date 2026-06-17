@@ -23,9 +23,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "AURi - AI App Builder",
   description: "",
-  // icons: {
-  //   icon: "/try.png",
-  // },
+  icons: {
+    icon: "/shortLogo.png",
+  },
 };
 
 export default function RootLayout({

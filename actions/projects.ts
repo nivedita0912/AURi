@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/prisma";
 import type { ProjectSummary } from "@/type/project";
 
-// export type { ProjectSummary } from "@/type/project";
+export type { ProjectSummary } from "@/type/project";
 
 // ─── Get all workspaces for the current user ──────────────────────────────────
 

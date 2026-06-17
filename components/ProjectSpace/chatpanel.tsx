@@ -207,7 +207,7 @@ export function ChatPanel({
                 ) : (
                   <div className="flex items-start gap-2">
                     <Image
-                      src="/logo-short.jpeg"
+                      src="/shortLogo.jpeg"
                       alt="Forge"
                       width={24}
                       height={24}
@@ -254,7 +254,7 @@ export function ChatPanel({
           {isGenerating && (
             <div className="flex items-start gap-2">
               <Image
-                src="/logo-short.jpeg"
+                src="/shortLogo.jpeg"
                 alt="Forge"
                 width={24}
                 height={24}

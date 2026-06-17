@@ -1,9 +1,9 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Zap } from "lucide-react";
-// import { ProjectCard } from "@/components/ProjectSpace/ProjectCard";
+import { ProjectCard } from "@/components/ProjectSpace/ProjectCard";
 import Link from "next/link";
-// import { getUserProjects } from "@/actions/projects";
+import { getUserProjects } from "@/actions/projects";
 import { BlueTitle } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
 
@@ -35,7 +35,7 @@ export default async function ProjectsPage() {
   const { userId } = await auth();
   if (!userId) redirect("/");
 
-//   const projects = await getUserProjects();
+  const projects = await getUserProjects();
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] px-4 py-10">
@@ -57,11 +57,11 @@ export default async function ProjectsPage() {
         </div>
 
         {/* Grid */}
-        {/* {projects.length === 0 ? (
+        {projects.length === 0 ? (
           <EmptyState />
         ) : (
           <ProjectCard projects={projects} />
-        )} */}
+        )}
       </div>
     </main>
   );
