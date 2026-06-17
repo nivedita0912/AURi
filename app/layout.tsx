@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "AURi - AI App Builder",
   description: "",
   icons: {
-    icon: "/try.png",
+    icon: "/shortLogo.png",
   },
 };
 
